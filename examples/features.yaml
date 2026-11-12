@@ -1,0 +1,46 @@
+# FeatureSpec list for CoreConfig.features.
+features:
+  - type: text
+    params:
+      column: description
+      clean:
+        unicode_normalization: NFKC
+        lowercase: true
+        strip: true
+        collapse_whitespace: true
+        substitutions:
+          "\\s+#\\w+": " reference "
+      representation:
+        type: hybrid
+        tfidf:
+          max_features: 50000
+          ngram_range: [1, 2]
+          min_df: 2
+        embedding:
+          provider: vllm
+          model: transaction-embeddings
+          base_url: https://embeddings.internal/v1
+          api_key_env: VLLM_API_KEY
+          batch_size: 32
+
+  - type: regex
+    params:
+      column: description
+      patterns:
+        has_iban: '\\b[A-Z]{2}\\d{2}[A-Z0-9]{10,30}\\b'
+        mentions_card: '\\b(carte|card|visa|mastercard)\\b'
+
+  - type: amount
+    params:
+      column: amount
+      include_raw: true
+      include_absolute: true
+      include_log_absolute: true
+
+  - type: date
+    params:
+      operation_date_column: operation_date
+      execution_date_column: execution_date
+      include_day_of_week: true
+      include_day_of_month: true
+      include_date_delta: true

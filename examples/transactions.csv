@@ -1,0 +1,17 @@
+booking_date,value_date,label,amount,category,account_id
+2026-01-02,2026-01-02,MARKET ALPHA,-42.80,groceries,account-a
+2026-01-05,2026-01-06,MARKET BETA,-18.35,groceries,account-b
+2026-01-08,,SUPERMARKET GAMMA,-63.10,groceries,account-a
+2026-01-11,2026-01-11,EPICERIE DELTA,-27.45,groceries,account-c
+2026-01-03,2026-01-03,RENT JANUARY,-950.00,rent,account-a
+2026-01-04,2026-01-05,LANDLORD PAYMENT,-950.00,rent,account-b
+2026-01-09,,MONTHLY RENT,-975.00,rent,account-a
+2026-01-12,2026-01-12,HOUSING PAYMENT,-950.00,rent,account-c
+2026-01-02,2026-01-02,EMPLOYER PAYROLL,2450.00,salary,account-a
+2026-01-05,2026-01-05,SALARY JANUARY,2450.00,salary,account-b
+2026-01-08,,MONTHLY WAGE,2510.00,salary,account-a
+2026-01-11,2026-01-12,COMPANY PAY,2450.00,salary,account-c
+2026-01-03,2026-01-03,SHOP REFUND,12.50,refund,account-a
+2026-01-06,2026-01-07,CARD REVERSAL,18.35,refund,account-b
+2026-01-09,,MERCHANT CREDIT,7.20,refund,account-a
+2026-01-12,2026-01-12,REFUND DELTA,27.45,refund,account-c
